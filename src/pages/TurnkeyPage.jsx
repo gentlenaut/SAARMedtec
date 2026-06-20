@@ -42,7 +42,7 @@ export default function TurnkeyPage({ setPage }) {
       </Section>
 
       {/* Projects */}
-      <Section bg="var(--paper-2)" pad="112px 0">
+      <Section bg="var(--paper-2)" pad="clamp(72px,11vw,112px) 0">
         <Reveal style={{ marginBottom:48 }}>
           <Eyebrow>Landmark Installations</Eyebrow>
           <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,48px)', marginTop:22 }}>

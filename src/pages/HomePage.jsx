@@ -23,7 +23,7 @@ function Hero({ setPage }) {
               A strategic bridge between the world's leading medical manufacturers and Iraq's
               Ministry of Health, hospitals, and clinicians.
             </p>
-            <div style={{ display:'flex', gap:14, marginTop:38, flexWrap:'wrap' }}>
+            <div className="hero-cta" style={{ display:'flex', gap:14, marginTop:38, flexWrap:'wrap' }}>
               <Button variant="accent" size="lg" onClick={()=>setPage('contact')}>Partner With Us</Button>
               <Button variant="outline" size="lg" icon="arrowUpRight" onClick={()=>setPage('about')}>Company Profile 2026</Button>
             </div>
@@ -72,11 +72,8 @@ function StatStrip() {
         @media (max-width: 860px) {
           .stat-strip { grid-template-columns: 1fr 1fr !important; }
           .stat-strip > *:nth-child(3) { border-left: none !important; }
-        }
-        @media (max-width: 480px) {
-          .stat-strip { grid-template-columns: 1fr !important; }
-          .stat-strip > * { border-left: none !important; border-top: 1px solid var(--line); }
-          .stat-strip > *:first-child { border-top: none; }
+          .stat-strip > *:nth-child(n+3) { border-top: 1px solid var(--line); }
+          .stat-strip > * { padding: 30px 20px 28px !important; }
         }
       `}</style>
     </Section>
@@ -92,7 +89,7 @@ function WhoWeAre() {
     { k:'04', t:<>Nationwide coverage with direct control across <span style={{color:'var(--red)'}}>Baghdad, Erbil & Basrah.</span></> },
   ];
   return (
-    <Section bg="var(--paper)" pad="128px 0">
+    <Section bg="var(--paper)" pad="clamp(80px,13vw,128px) 0">
       <div style={{ display:'grid', gridTemplateColumns:'0.8fr 2fr', gap:64 }} className="who-grid">
         <Reveal>
           <Eyebrow>Who We Are</Eyebrow>
@@ -122,7 +119,7 @@ function WhoWeAre() {
 // ── 03 · Global Partners ─────────────────────────────────────────────────────
 function Partners() {
   return (
-    <Section bg="var(--paper-2)" pad="112px 0">
+    <Section bg="var(--paper-2)" pad="clamp(72px,11vw,112px) 0">
       <Reveal style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end',
         flexWrap:'wrap', gap:24, marginBottom:56 }}>
         <div>
@@ -156,7 +153,8 @@ function Partners() {
 
       <style>{`
         @media (max-width:880px){ .logo-wall{ grid-template-columns:repeat(2,1fr) !important; } }
-        @media (max-width:440px){ .logo-wall{ grid-template-columns:1fr !important; } }
+        @media (max-width:880px){ .logo-cell{ min-height:104px !important; padding:26px 18px !important; } }
+        @media (max-width:880px){ .logo-cell span{ font-size:16px !important; } }
       `}</style>
     </Section>
   );
@@ -165,7 +163,7 @@ function Partners() {
 // ── 04 · Capabilities ────────────────────────────────────────────────────────
 function Capabilities() {
   return (
-    <Section bg="var(--paper)" pad="128px 0">
+    <Section bg="var(--paper)" pad="clamp(80px,13vw,128px) 0">
       <Reveal style={{ maxWidth:720, marginBottom:64 }}>
         <Eyebrow>Capabilities</Eyebrow>
         <h2 className="display" style={{ fontSize:'clamp(30px,4vw,54px)', marginTop:22 }}>
@@ -204,7 +202,7 @@ function Capabilities() {
 // ── 05 · Achievements (timeline) ─────────────────────────────────────────────
 function Achievements({ setPage }) {
   return (
-    <Section bg="var(--paper-2)" pad="128px 0">
+    <Section bg="var(--paper-2)" pad="clamp(80px,13vw,128px) 0">
       <div style={{ display:'grid', gridTemplateColumns:'0.9fr 2fr', gap:64 }} className="ach-grid">
         <div>
           <Reveal style={{ position:'sticky', top:110 }}>
@@ -273,7 +271,7 @@ function Coverage() {
     { src:'/assets/logo-kimadia.png', name:'KIMADIA',                  sub:'State Co. for Drugs & Appliances' },
   ];
   return (
-    <Section bg="var(--paper)" pad="128px 0">
+    <Section bg="var(--paper)" pad="clamp(80px,13vw,128px) 0">
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:80 }} className="cov-grid">
         <div>
           <Reveal>
@@ -359,7 +357,7 @@ function SupplyChain() {
     { icon:'handshake', k:'Consignment', v:'Flexible Models',      d:'The only provider in Iraq offering full-consignment solutions — reducing financial burden for hospitals.' },
   ];
   return (
-    <section className="deep-surface" style={{ color:'var(--on-deep)', padding:'128px 0' }}>
+    <section className="deep-surface" style={{ color:'var(--on-deep)', padding:'clamp(80px,13vw,128px) 0' }}>
       <div className="container">
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:64, alignItems:'end',
           marginBottom:40 }} className="sc-head">
@@ -425,7 +423,7 @@ function SupplyChain() {
 // ── 08 · CTA ─────────────────────────────────────────────────────────────────
 function HomeCTA({ setPage }) {
   return (
-    <Section bg="var(--paper)" pad="120px 0">
+    <Section bg="var(--paper)" pad="clamp(76px,12vw,120px) 0">
       <Reveal style={{ borderTop:'1px solid var(--ink)', paddingTop:56 }}>
         <div style={{ display:'grid', gridTemplateColumns:'1.4fr 1fr', gap:56, alignItems:'end' }}
           className="cta-grid">
@@ -477,7 +475,7 @@ function Standards() {
 function Testimonial() {
   const t = TESTIMONIALS[0];
   return (
-    <Section bg="var(--paper-2)" pad="112px 0">
+    <Section bg="var(--paper-2)" pad="clamp(72px,11vw,112px) 0">
       <Reveal style={{ maxWidth:1000, margin:'0 auto', textAlign:'center' }}>
         <Eyebrow style={{ justifyContent:'center' }}>In their words</Eyebrow>
         <blockquote style={{ fontFamily:'var(--font-serif)', fontWeight:400,
@@ -498,7 +496,7 @@ function Testimonial() {
 // ── Perspectives (thought-leadership cards — IBM/Accenture/Salesforce) ────────
 function Perspectives({ setPage }) {
   return (
-    <Section bg="var(--paper)" pad="120px 0">
+    <Section bg="var(--paper)" pad="clamp(76px,12vw,120px) 0">
       <Reveal style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end',
         flexWrap:'wrap', gap:24, marginBottom:56 }}>
         <div>

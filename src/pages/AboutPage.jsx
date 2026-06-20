@@ -31,7 +31,7 @@ export default function AboutPage({ setPage }) {
         lead="SAARMedTec is an enabler within Iraq's healthcare ecosystem — bringing together global medical innovation, local need, and long-term partnership." />
 
       {/* Vision / Mission */}
-      <Section bg="var(--paper-2)" pad="112px 0">
+      <Section bg="var(--paper-2)" pad="clamp(72px,11vw,112px) 0">
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:1, background:'var(--line-2)',
           border:'1px solid var(--line-2)' }} className="vm-grid">
           {[
@@ -48,7 +48,7 @@ export default function AboutPage({ setPage }) {
       </Section>
 
       {/* Story — short blocks, not long paragraphs */}
-      <Section bg="var(--paper)" pad="112px 0">
+      <Section bg="var(--paper)" pad="clamp(72px,11vw,112px) 0">
         <div style={{ display:'grid', gridTemplateColumns:'0.8fr 2fr', gap:64 }} className="who-grid">
           <Reveal>
             <Eyebrow>Our Story</Eyebrow>
@@ -76,7 +76,7 @@ export default function AboutPage({ setPage }) {
       </Section>
 
       {/* Values */}
-      <Section bg="var(--deep)" dark pad="112px 0" className="deep-surface">
+      <Section bg="var(--deep)" dark pad="clamp(72px,11vw,112px) 0" className="deep-surface">
         <Reveal style={{ marginBottom:56 }}>
           <Eyebrow color="var(--red)">Core Values</Eyebrow>
           <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,48px)', marginTop:22, color:'var(--on-deep)' }}>
@@ -97,7 +97,7 @@ export default function AboutPage({ setPage }) {
       </Section>
 
       {/* Leadership */}
-      <Section bg="var(--paper)" pad="112px 0">
+      <Section bg="var(--paper)" pad="clamp(72px,11vw,112px) 0">
         <Reveal style={{ marginBottom:48 }}>
           <Eyebrow>Leadership</Eyebrow>
           <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,48px)', marginTop:22 }}>Executive team</h2>
@@ -119,7 +119,7 @@ export default function AboutPage({ setPage }) {
       </Section>
 
       {/* Credentials */}
-      <Section bg="var(--paper-2)" pad="112px 0">
+      <Section bg="var(--paper-2)" pad="clamp(72px,11vw,112px) 0">
         <Reveal style={{ marginBottom:48 }}>
           <Eyebrow>Regulatory & Compliance</Eyebrow>
           <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,48px)', marginTop:22 }}>Standards that matter</h2>

@@ -3,7 +3,7 @@ import { Reveal, Eyebrow } from '../components/primitives.jsx';
 // Shared header for inner pages.
 export default function PageHead({ num, crumb, title, lead }) {
   return (
-    <header style={{ background:'var(--paper)', padding:'168px 0 0' }}>
+    <header style={{ background:'var(--paper)', padding:'clamp(122px,18vw,168px) 0 0' }}>
       <div className="container">
         <Reveal mode="fade" style={{ display:'flex', justifyContent:'space-between',
           alignItems:'baseline', flexWrap:'wrap', gap:16, paddingBottom:36 }}>
