@@ -38,7 +38,7 @@ export default function Nav({ page, setPage }) {
         <button onClick={()=>setPage('home')} aria-label="SAARMedTec — home"
           style={{ background:'none', border:'none', cursor:'pointer', padding:0,
             display:'flex', alignItems:'center' }}>
-          <Logo height={30}/>
+          <Logo height={40}/>
         </button>
 
         <div className="desktop-only" style={{ display:'flex', alignItems:'center', gap:4 }}>

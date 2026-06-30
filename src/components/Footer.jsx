@@ -5,7 +5,8 @@ import Logo from './Logo.jsx';
 export default function Footer({ setPage }) {
   const year = new Date().getFullYear();
   return (
-    <footer className="deep-surface" style={{ color:'var(--on-deep)' }}>
+    <footer className="deep-surface pattern-bg on-dark" style={{ color:'var(--on-deep)' }}>
+      <div className="pattern-layer" aria-hidden="true"/>
       <div className="container" style={{ paddingTop:'clamp(104px,12vw,160px)', paddingBottom:0 }}>
 
         <Reveal>
@@ -78,7 +79,7 @@ export default function Footer({ setPage }) {
             © {year} SAARMedTec L.L.Co.
           </span>
           <span className="eyebrow" style={{ color:'var(--on-deep-faint)' }}>
-            MOH-Certified · CE / FDA · ISO 9001 In Progress
+            MOH-Certified · ISO 9001 · CE / FDA (distributed products)
           </span>
         </div>
       </div>

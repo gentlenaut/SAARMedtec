@@ -1,12 +1,13 @@
 import Section from '../components/Section.jsx';
 import Icon from '../components/Icon.jsx';
 import { Reveal, Eyebrow, Button, Counter } from '../components/primitives.jsx';
-import { PARTNERS, CAPABILITIES, LANDMARKS, CLIENTS, STANDARDS, TESTIMONIALS, PERSPECTIVES } from '../data.js';
+import { PARTNER_LOGOS, CAPABILITIES, LANDMARKS, CLIENTS, STANDARDS, TESTIMONIALS, PERSPECTIVES } from '../data.js';
 
 // ── 01 · Hero (typography-led, minimal, high whitespace) ─────────────────────
 function Hero({ setPage }) {
   return (
-    <section style={{ background:'var(--paper)', padding:'clamp(146px, 18vh, 200px) 0 clamp(40px,6vw,72px)' }}>
+    <section className="pattern-bg" style={{ background:'var(--paper)', padding:'clamp(146px, 18vh, 200px) 0 clamp(40px,6vw,72px)' }}>
+      <div className="pattern-layer" aria-hidden="true"/>
       <div className="container">
         <Reveal mode="fade">
           <h1 className="display" style={{ fontSize:'clamp(42px, 7vw, 116px)',
@@ -134,28 +135,18 @@ function Partners() {
         </p>
       </Reveal>
 
-      <Reveal mode="fade" className="logo-wall" style={{ display:'grid',
-        gridTemplateColumns:'repeat(4, 1fr)', borderTop:'1px solid var(--line)' }}>
-        {PARTNERS.map((p)=>(
-          <div key={p} className="logo-cell" style={{ display:'flex', alignItems:'center',
-            justifyContent:'center', minHeight:132, padding:'36px 28px',
-            borderBottom:'1px solid var(--line)' }}>
-            <span style={{ fontFamily:'var(--font-sans)', fontWeight:600, fontSize:18,
-              letterSpacing:'-0.01em', textAlign:'center' }}>{p}</span>
+      <Reveal mode="fade" className="partner-wall">
+        {PARTNER_LOGOS.map((src, i) => (
+          <div key={i} className="partner-cell">
+            <img src={src} alt="SAARMedTec manufacturer partner" loading="lazy" decoding="async"/>
           </div>
         ))}
       </Reveal>
-      <div style={{ padding:'24px 2px 0', display:'flex', justifyContent:'space-between',
+      <div style={{ padding:'26px 2px 0', display:'flex', justifyContent:'space-between',
         alignItems:'center', flexWrap:'wrap', gap:8 }}>
-        <span className="eyebrow" style={{ color:'var(--muted)' }}>+ 13 further manufacturer partnerships</span>
-        <span className="eyebrow" style={{ color:'var(--faint)' }}>29 total · 14 specialties</span>
+        <span className="eyebrow" style={{ color:'var(--muted)' }}>Exclusive &amp; strategic manufacturer partnerships</span>
+        <span className="eyebrow" style={{ color:'var(--faint)' }}>29 partners · 14 specialties</span>
       </div>
-
-      <style>{`
-        @media (max-width:880px){ .logo-wall{ grid-template-columns:repeat(2,1fr) !important; } }
-        @media (max-width:880px){ .logo-cell{ min-height:104px !important; padding:26px 18px !important; } }
-        @media (max-width:880px){ .logo-cell span{ font-size:16px !important; } }
-      `}</style>
     </Section>
   );
 }

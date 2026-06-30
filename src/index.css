@@ -1,9 +1,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  /* Single enterprise typeface (brand guidelines) — no monospace, no serif.
+     --font-mono / --font-serif kept as aliases so existing call sites resolve
+     to the sans without per-component edits. */
   --font-sans:  'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-  --font-mono:  'IBM Plex Mono', ui-monospace, monospace;
-  --font-serif: 'IBM Plex Serif', Georgia, serif;
+  --font-mono:  var(--font-sans);
+  --font-serif: var(--font-sans);
 
   /* Surfaces */
   --paper:    #ffffff;
@@ -162,6 +165,37 @@ a { color: inherit; }
 .media-card { overflow: hidden; }
 .media-card img { transition: transform 0.6s var(--ease); }
 .media-card:hover img { transform: scale(1.04); }
+
+/* ── Partner wall — airy, monochrome, colour-on-hover (Stripe/IBM) ─────────── */
+.partner-wall {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.partner-cell {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 124px; padding: 30px 26px;
+}
+.partner-cell img {
+  max-height: 38px; max-width: 82%; width: auto; object-fit: contain;
+  filter: grayscale(1); opacity: 0.5;
+  transition: filter 0.4s var(--ease), opacity 0.4s var(--ease);
+}
+.partner-cell:hover img { filter: grayscale(0); opacity: 1; }
+@media (max-width: 1000px) { .partner-wall { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 640px)  { .partner-wall { grid-template-columns: repeat(3, 1fr); } .partner-cell { min-height: 98px; padding: 22px 16px; } }
+@media (max-width: 380px)  { .partner-wall { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── Brand pattern — subtle, low-contrast background motif ─────────────────── */
+.pattern-bg { position: relative; isolation: isolate; }
+.pattern-bg > .pattern-layer {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: url('/assets/pattern.svg');
+  background-size: cover; background-position: center;
+  opacity: 0.05;
+}
+.pattern-bg.on-dark > .pattern-layer { filter: brightness(0) invert(1); opacity: 0.06; }
 
 .page-enter { animation: pageIn 0.55s var(--ease) both; }
 @keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }

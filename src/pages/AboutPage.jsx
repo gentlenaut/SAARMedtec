@@ -20,8 +20,8 @@ export default function AboutPage({ setPage }) {
   ];
   const creds = [
     { icon:'building', t:'Ministry of Health', s:'Trusted partner since 1984' },
-    { icon:'shield',   t:'CE / FDA Certified', s:'All equipment meets international standards' },
-    { icon:'doc',      t:'ISO 9001',           s:'Quality-management certification in progress' },
+    { icon:'shield',   t:'CE / FDA Products',  s:'Certifications apply to the products we distribute' },
+    { icon:'doc',      t:'ISO 9001',           s:'Quality management system certification' },
     { icon:'scale',    t:'FCPA & UKBA',        s:'Full anti-bribery & ethical compliance' },
   ];
   return (

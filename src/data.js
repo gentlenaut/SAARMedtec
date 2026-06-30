@@ -36,6 +36,11 @@ export const BUSINESS_UNITS = [
   { id:'14', name:'Respiratory Care',          desc:'Respiratory care & airway management systems',        brands:'Flexicare · Vyaire' },
 ];
 
+// Partner logos (official brand assets in public/assets/partners/).
+// Rendered as a monochrome wall on the homepage.
+export const PARTNER_LOGOS = Array.from({ length: 32 }, (_, i) =>
+  `/assets/partners/Logo-${String(i + 1).padStart(2, '0')}.svg`);
+
 export const PARTNERS = [
   'Medtronic','GE Healthcare','Olympus','Zimmer Biomet',
   'Boston Scientific','Hologic','ResMed','Ziehm Imaging',
@@ -77,8 +82,8 @@ export const CLIENTS = [
 // Trust / recognition strip (homepage). Mirrors the credentials on the About page.
 export const STANDARDS = [
   { k:'Ministry of Health', v:'Certified partner since 1984' },
-  { k:'CE / FDA',           v:'Internationally certified equipment' },
-  { k:'ISO 9001',           v:'Quality management — in progress' },
+  { k:'CE / FDA',           v:'Certifications on the products we distribute' },
+  { k:'ISO 9001',           v:'Quality management system' },
   { k:'FCPA & UKBA',        v:'Anti-bribery & ethics compliance' },
 ];
 
