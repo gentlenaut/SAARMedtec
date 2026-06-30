@@ -1,5 +1,4 @@
 import Section from '../components/Section.jsx';
-import Icon from '../components/Icon.jsx';
 import Figure from '../components/Figure.jsx';
 import { Reveal, Eyebrow, Button } from '../components/primitives.jsx';
 import PageHead from './PageHead.jsx';
@@ -12,23 +11,39 @@ export default function AboutPage({ setPage }) {
     { num:'04', name:'Compassion',     desc:'Understanding the human impact of every solution.' },
     { num:'05', name:'Quality',        desc:'Upholding uncompromised standards in all operations.' },
   ];
-  const team = [
-    { name:'Faris Al-Derzi',    role:'Chief Executive Officer' },
-    { name:'Saif Janan',        role:'COO — Iraq' },
-    { name:'Deema Obeidat',     role:'COO — Jordan' },
-    { name:'Yousef Bani Jaber', role:'Chief Financial Officer' },
-  ];
-  const creds = [
-    { icon:'building', t:'Ministry of Health', s:'Trusted partner since 1984' },
-    { icon:'shield',   t:'CE / FDA Products',  s:'Certifications apply to the products we distribute' },
-    { icon:'doc',      t:'ISO 9001',           s:'Quality management system certification' },
-    { icon:'scale',    t:'FCPA & UKBA',        s:'Full anti-bribery & ethical compliance' },
+  // NOTE: draft copy — replace with the company-profile text where marked.
+  const compliance = [
+    { group:'Quality Management', items:[
+      { t:'ISO 9001', s:'Quality management system certification' },
+      { t:'Quality Management System', s:'Documented processes across every operation' },
+      { t:'Audit Achievements', s:'Successful third-party and manufacturer audits' },
+      { t:'MECOMED', s:'Member of the regional medical-device association' },
+    ]},
+    { group:'Product Certifications', items:[
+      { t:'CE Certified Products', s:'European conformity on the devices we distribute' },
+      { t:'FDA Cleared Products', s:'US FDA clearance on the devices we distribute' },
+    ]},
+    { group:'Government Recognition', items:[
+      { t:'Ministry of Health', s:'Approved & trusted partner since 1984' },
+      { t:'KIMADIA', s:'State Co. for Drugs & Medical Appliances' },
+    ]},
   ];
   return (
     <div>
       <PageHead num="01" crumb="About"
         title={<>Founded 1984.<br/>Still leading.</>}
         lead="SAARMedTec is an enabler within Iraq's healthcare ecosystem — bringing together global medical innovation, local need, and long-term partnership." />
+
+      {/* Motto */}
+      <Section bg="var(--paper)" pad="0 0 clamp(64px,8vw,96px)">
+        <Reveal style={{ borderTop:'1px solid var(--ink)', paddingTop:'clamp(40px,5vw,64px)' }}>
+          <Eyebrow color="var(--red)">Our Motto</Eyebrow>
+          <p className="display" style={{ fontSize:'clamp(26px,3.6vw,52px)', fontWeight:600,
+            letterSpacing:'-0.02em', lineHeight:1.12, marginTop:24, maxWidth:1000 }}>
+            Bridging the path to better care — through integrity, reliability and quality.
+          </p>
+        </Reveal>
+      </Section>
 
       {/* Vision / Mission */}
       <Section bg="var(--paper-2)" pad="clamp(72px,11vw,112px) 0">
@@ -47,21 +62,21 @@ export default function AboutPage({ setPage }) {
         </div>
       </Section>
 
-      {/* Story — short blocks, not long paragraphs */}
+      {/* Story */}
       <Section bg="var(--paper)" pad="clamp(72px,11vw,112px) 0">
         <div style={{ display:'grid', gridTemplateColumns:'0.8fr 2fr', gap:64 }} className="who-grid">
           <Reveal>
             <Eyebrow>Our Story</Eyebrow>
-            <Figure ratio="3 / 4" src="/assets/img/about-clinician.jpg"
-              alt="A clinical partner of SAARMedTec"
-              caption="Partnering with Iraq's clinicians"
+            <Figure ratio="3 / 4" src="/assets/img/about-facility.jpg"
+              alt="Medical imaging infrastructure"
+              caption="Infrastructure delivered across Iraq"
               className="media-card" style={{ marginTop:28 }}/>
           </Reveal>
           <div>
             {[
               <>Established in Baghdad in <b style={{color:'var(--ink)',fontWeight:600}}>1984</b>, with a mandate to bring world-class medical technology within reach of Iraqi institutions.</>,
               <>Today: <b style={{color:'var(--ink)',fontWeight:600}}>140+ employees</b>, 14 business units, and a 75-person specialist sales force across Iraq.</>,
-              <>Partnerships with <b style={{color:'var(--ink)',fontWeight:600}}>29 global manufacturers</b> — Medtronic, GE Healthcare, Olympus and more.</>,
+              <>Partnerships with <b style={{color:'var(--ink)',fontWeight:600}}>29 global manufacturers</b> — Medtronic, Olympus, Zimmer Biomet and more.</>,
             ].map((t,i)=>(
               <Reveal key={i} delay={i*70} style={{ padding:'28px 0', borderTop:'1px solid var(--line)' }}>
                 <p style={{ fontSize:'clamp(19px,2.4vw,28px)', lineHeight:1.4, color:'var(--ink-2)',
@@ -88,51 +103,44 @@ export default function AboutPage({ setPage }) {
           {values.map((v,i)=>(
             <Reveal key={v.num} delay={i*70} style={{ padding:'36px 22px 40px',
               borderLeft: i? '1px solid var(--line-deep)':'none' }}>
-              <span className="eyebrow tnum" style={{ color:'var(--red)' }}>{v.num}</span>
-              <h3 style={{ fontSize:18, fontWeight:600, margin:'24px 0 12px', color:'var(--on-deep)' }}>{v.name}</h3>
+              <span className="display tnum" style={{ color:'var(--red)', fontSize:22, letterSpacing:'-0.01em' }}>{v.num}</span>
+              <h3 style={{ fontSize:18, fontWeight:600, margin:'20px 0 12px', color:'var(--on-deep)' }}>{v.name}</h3>
               <p style={{ fontSize:13.5, lineHeight:1.6, color:'var(--on-deep-muted)' }}>{v.desc}</p>
             </Reveal>
           ))}
         </div>
       </Section>
 
-      {/* Leadership */}
-      <Section bg="var(--paper)" pad="clamp(72px,11vw,112px) 0">
-        <Reveal style={{ marginBottom:48 }}>
-          <Eyebrow>Leadership</Eyebrow>
-          <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,48px)', marginTop:22 }}>Executive team</h2>
-        </Reveal>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', borderTop:'1px solid var(--ink)' }}
-          className="cap-grid">
-          {team.map((m,i)=>(
-            <Reveal key={m.name} delay={i*70} style={{ padding:'36px 24px 40px',
-              borderLeft:i?'1px solid var(--line)':'none' }}>
-              <div style={{ fontFamily:'var(--font-mono)', fontSize:34, fontWeight:500,
-                color:'var(--ink)', letterSpacing:'-0.02em', marginBottom:24 }}>
-                {m.name.split(' ').map(w=>w[0]).slice(0,2).join('')}
-              </div>
-              <h3 style={{ fontSize:17, fontWeight:600, marginBottom:6 }}>{m.name}</h3>
-              <div className="eyebrow" style={{ color:'var(--red)', fontSize:11 }}>{m.role}</div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* Credentials */}
+      {/* Quality & Compliance — grouped */}
       <Section bg="var(--paper-2)" pad="clamp(72px,11vw,112px) 0">
-        <Reveal style={{ marginBottom:48 }}>
-          <Eyebrow>Regulatory & Compliance</Eyebrow>
-          <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,48px)', marginTop:22 }}>Standards that matter</h2>
-        </Reveal>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:1, background:'var(--line-2)',
-          border:'1px solid var(--line-2)' }} className="cred-grid">
-          {creds.map((c,i)=>(
-            <Reveal key={c.t} delay={i*70} style={{ background:'var(--paper)', padding:'32px 26px 36px' }}>
-              <span style={{ color:'var(--red)' }}><Icon name={c.icon} size={26}/></span>
-              <h3 style={{ fontSize:16, fontWeight:600, margin:'24px 0 8px' }}>{c.t}</h3>
-              <p style={{ fontSize:13.5, lineHeight:1.6, color:'var(--muted)' }}>{c.s}</p>
-            </Reveal>
-          ))}
+        <div style={{ display:'grid', gridTemplateColumns:'0.9fr 1.6fr', gap:64 }} className="who-grid">
+          <Reveal>
+            <Eyebrow>Quality &amp; Compliance</Eyebrow>
+            <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,44px)', marginTop:22 }}>
+              Standards that matter.
+            </h2>
+            <p style={{ fontSize:15, lineHeight:1.7, color:'var(--muted)', marginTop:22, maxWidth:320 }}>
+              Our Quality Policy commits us to consistent, compliant and accountable
+              operations — from sourcing and storage to installation and lifelong service.
+            </p>
+          </Reveal>
+
+          <div>
+            {compliance.map((grp,gi)=>(
+              <Reveal key={grp.group} delay={gi*80} style={{ paddingTop:gi?40:0 }}>
+                <div className="eyebrow" style={{ color:'var(--red)', marginBottom:18 }}>{grp.group}</div>
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:1,
+                  background:'var(--line-2)', border:'1px solid var(--line-2)' }} className="cred-grid">
+                  {grp.items.map(it=>(
+                    <div key={it.t} style={{ background:'var(--paper)', padding:'26px 24px 28px' }}>
+                      <h3 style={{ fontSize:16, fontWeight:600, marginBottom:6 }}>{it.t}</h3>
+                      <p style={{ fontSize:13.5, lineHeight:1.6, color:'var(--muted)' }}>{it.s}</p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -142,7 +150,6 @@ export default function AboutPage({ setPage }) {
           .val-grid{ grid-template-columns:1fr 1fr !important; }
           .val-grid > *:nth-child(odd){ border-left:none !important; }
           .val-grid > *:nth-child(n+3){ border-top:1px solid var(--line-deep); }
-          .cred-grid{ grid-template-columns:1fr 1fr !important; }
         }
         @media (max-width:520px){ .cred-grid, .val-grid{ grid-template-columns:1fr !important; } }
       `}</style>

@@ -25,7 +25,7 @@ export const BUSINESS_UNITS = [
   { id:'03', name:'Respiratory & Sleep',       desc:'Ventilation, CPAP & pulmonary diagnostics',           brands:'ResMed · Vyaire' },
   { id:'04', name:'Medical Endoscope',         desc:'Endoscopy, visualisation & EBUS systems',             brands:'Olympus' },
   { id:'05', name:'Diabetes',                  desc:'CGM, insulin pumps & glucose management',             brands:'Medtronic MiniMed' },
-  { id:'06', name:'Diagnostic & Imaging',      desc:'CT, MRI, X-ray, PET/CT & ultrasound platforms',       brands:'GE Healthcare · Hologic' },
+  { id:'06', name:'Diagnostic & Imaging',      desc:'CT, MRI, X-ray, PET/CT & ultrasound platforms',       brands:'Hologic · Ziehm Imaging' },
   { id:'07', name:'Urology & Urogynecology',   desc:'Stone management, urodynamics & pelvic health',       brands:'Boston Scientific · Dornier' },
   { id:'08', name:'Disinfection',              desc:'Infection prevention & sterilisation',                brands:'Ecolab · Anios' },
   { id:'09', name:'Spinal & Orthopedic',       desc:'Implants, fixation & deformity systems',              brands:'Zimmer Biomet · Medtronic' },
@@ -42,7 +42,7 @@ export const PARTNER_LOGOS = Array.from({ length: 32 }, (_, i) =>
   `/assets/partners/Logo-${String(i + 1).padStart(2, '0')}.svg`);
 
 export const PARTNERS = [
-  'Medtronic','GE Healthcare','Olympus','Zimmer Biomet',
+  'Medtronic','Olympus','Zimmer Biomet',
   'Boston Scientific','Hologic','ResMed','Ziehm Imaging',
   'Dornier MedTech','Convatec','Medela','Flexicare',
   'Vyaire','Ecolab / Anios','Starkey','Celbrea',
@@ -60,7 +60,6 @@ export const CAPABILITIES = [
 ];
 
 export const LANDMARKS = [
-  { yr:'2014', name:'Discovery IQ PET/CT',        partner:'GE Healthcare', note:"Iraq's first PET/CT installation" },
   { yr:'2015', name:'CoreValve™ TAVR',            partner:'Medtronic',     note:'First transcatheter aortic valve, Al-Najaf' },
   { yr:'2016', name:'O-Arm™ Neuronavigation',     partner:'Medtronic',     note:"Iraq's first real-time 3D surgical imaging" },
   { yr:'2018', name:'Flexible Pleuroscope',       partner:'Olympus',       note:'First flexible pleuroscope, Thi-Qar' },
@@ -68,7 +67,6 @@ export const LANDMARKS = [
   { yr:'2020', name:'3Dimensions™ Mammography',   partner:'Hologic',       note:'3D breast-cancer screening, SmartCurve™' },
   { yr:'2021', name:'THUNDERBEAT',                partner:'Olympus',       note:'Integrated ultrasonic + bipolar energy' },
   { yr:'2022', name:'Evolut™ TAVI',               partner:'Medtronic',     note:'Minimally invasive aortic valve replacement' },
-  { yr:'2024', name:'GENTRACE Cyclotron',         partner:'GE Healthcare', note:'Local PET-isotope production for Iraq' },
 ];
 
 export const CLIENTS = [

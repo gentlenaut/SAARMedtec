@@ -11,7 +11,7 @@ export default function CustomerSupportPage() {
     { q:'What is the SAAR360 platform?', a:'SAAR360 is our proprietary platform for inventory management, equipment tracking, service ticketing and logistics. Customers with service agreements can log support requests directly through it.' },
     { q:'How quickly can I get an engineer on-site?', a:'Our standard SLA is a response within 24 hours and on-site attendance within 48 hours. For critical-care equipment failures we offer 24-hour on-call emergency response.' },
     { q:'Do you offer loaner equipment during repairs?', a:'Yes — for select categories we maintain a loaner fleet at our Baghdad warehouse. Availability depends on product type and current inventory.' },
-    { q:'Are your engineers certified by the manufacturers?', a:'Yes. Our biomedical engineers are factory-trained and certified directly by our global partners, including Medtronic, GE Healthcare and Olympus.' },
+    { q:'Are your engineers certified by the manufacturers?', a:'Yes. Our biomedical engineers are factory-trained and certified directly by our global partners, including Medtronic, Olympus and Boston Scientific.' },
     { q:'What happens after the warranty period?', a:'We offer comprehensive post-warranty service agreements — scheduled preventative maintenance, spare-parts coverage and priority SLAs, tailored to your portfolio.' },
     { q:'Which cities do you provide on-site service in?', a:'On-site service across Baghdad, Erbil and Basrah. Remote support via SAAR360 is available nationwide.' },
   ];

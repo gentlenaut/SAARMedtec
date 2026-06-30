@@ -6,7 +6,7 @@ import PageHead from './PageHead.jsx';
 
 export default function ServiceCenterPage({ setPage }) {
   const feats = [
-    { icon:'install',   t:'Factory-Trained Engineers', s:'Certified by Medtronic, GE & Olympus' },
+    { icon:'install',   t:'Factory-Trained Engineers', s:'Certified by Medtronic, Olympus & Boston Scientific' },
     { icon:'warehouse', t:'7-Floor Warehouse',         s:'Genuine spare parts & loaner fleet' },
     { icon:'globe',     t:'Nationwide Coverage',       s:'Baghdad, Erbil & Basrah' },
     { icon:'cpu',       t:'SAAR360 Platform',          s:'Real-time inventory & service tracking' },

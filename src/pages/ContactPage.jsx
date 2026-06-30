@@ -7,9 +7,13 @@ import { inputStyle, FieldLabel } from './forms.jsx';
 
 export default function ContactPage() {
   const [sent, setSent] = React.useState(false);
+  // Repeatable office card — add new locations by appending here.
+  // Optional fields: maps (Google Maps link), web (office/region website).
   const offices = [
-    { country:'Iraq', city:'Baghdad', addr:"Hay Al Wihda, Sina'a St., District 906, Bldg. 11", phone:'+964 790 190 5611' },
-    { country:'Jordan', city:'Amman', addr:'77 Business Avenue Bldg, Jabal Amman, 3rd Circle, Zahran St.', phone:'+962 6 4650 551' },
+    { country:'Iraq', city:'Baghdad', addr:"Hay Al Wihda, Sina'a St., District 906, Bldg. 11", phone:'+964 790 190 5611',
+      maps:'https://www.google.com/maps/search/?api=1&query=Hay+Al+Wihda+Sina%27a+St+Baghdad', web:null },
+    { country:'Jordan', city:'Amman', addr:'77 Business Avenue Bldg, Jabal Amman, 3rd Circle, Zahran St.', phone:'+962 6 4650 551',
+      maps:'https://www.google.com/maps/search/?api=1&query=77+Business+Avenue+Jabal+Amman', web:null },
   ];
   return (
     <div>
@@ -37,6 +41,18 @@ export default function ContactPage() {
                     <span style={{ color:'var(--red)' }}><Icon name="phone" size={18}/></span>
                     <a href={`tel:${o.phone.replace(/\s/g,'')}`} className="ulink" style={{ fontSize:14.5, color:'var(--ink-2)' }}>{o.phone}</a>
                   </div>
+                  {(o.maps || o.web) && (
+                    <div style={{ display:'flex', gap:20, alignItems:'center', marginTop:12, flexWrap:'wrap' }}>
+                      {o.maps && (
+                        <a href={o.maps} target="_blank" rel="noopener noreferrer" className="ulink eyebrow"
+                          style={{ color:'var(--red)' }}>View on Maps <Icon name="arrowUpRight" size={13}/></a>
+                      )}
+                      {o.web && (
+                        <a href={o.web} target="_blank" rel="noopener noreferrer" className="ulink eyebrow"
+                          style={{ color:'var(--red)' }}>Website <Icon name="arrowUpRight" size={13}/></a>
+                      )}
+                    </div>
+                  )}
                 </Reveal>
               ))}
               <Reveal delay={180} style={{ padding:'28px 0', borderTop:'1px solid var(--line)',

@@ -75,9 +75,17 @@ export default function Footer({ setPage }) {
         <div style={{ height:1, background:'var(--line-deep)', margin:'56px 0 0' }}/>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center',
           flexWrap:'wrap', gap:12, padding:'24px 0' }}>
-          <span className="eyebrow" style={{ color:'var(--on-deep-faint)' }}>
-            © {year} SAARMedTec L.L.Co.
-          </span>
+          <div style={{ display:'flex', alignItems:'center', gap:18, flexWrap:'wrap' }}>
+            <span className="eyebrow" style={{ color:'var(--on-deep-faint)' }}>
+              © {year} SAARMedTec L.L.Co.
+            </span>
+            <button onClick={()=>setPage('terms')}
+              style={{ background:'none', border:'none', cursor:'pointer', padding:0,
+                color:'var(--on-deep-muted)', transition:'color 0.25s' }}
+              onMouseEnter={e=>e.currentTarget.style.color='var(--on-deep)'}
+              onMouseLeave={e=>e.currentTarget.style.color='var(--on-deep-muted)'}
+              className="eyebrow">SAAR360 Terms</button>
+          </div>
           <span className="eyebrow" style={{ color:'var(--on-deep-faint)' }}>
             MOH-Certified · ISO 9001 · CE / FDA (distributed products)
           </span>

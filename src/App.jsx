@@ -12,6 +12,7 @@ import ServiceCenterPage from './pages/ServiceCenterPage.jsx';
 import CustomerSupportPage from './pages/CustomerSupportPage.jsx';
 import CareersPage from './pages/CareersPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import TermsPage from './pages/TermsPage.jsx';
 
 // Map page id → component. Each page receives `setPage` (now a navigation
 // helper) so existing setPage('contact')-style calls keep working unchanged.
@@ -24,6 +25,7 @@ const COMPONENTS = {
   'customer-support': CustomerSupportPage,
   careers: CareersPage,
   contact: ContactPage,
+  terms: TermsPage,
 };
 
 export default function App() {

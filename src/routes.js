@@ -10,6 +10,7 @@ export const PAGES = [
   { id: 'customer-support', path: '/support',  title: 'Customer Support — SAARMedTec' },
   { id: 'careers',          path: '/careers',  title: 'Careers — SAARMedTec' },
   { id: 'contact',          path: '/contact',  title: 'Contact — SAARMedTec' },
+  { id: 'terms',            path: '/saar360-terms', title: 'SAAR360 Terms & Conditions — SAARMedTec' },
 ];
 
 const byId = Object.fromEntries(PAGES.map(p => [p.id, p]));
