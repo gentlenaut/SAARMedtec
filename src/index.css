@@ -216,6 +216,10 @@ a { color: inherit; }
 /* On dark surfaces keep it brand red (matches the profile's red chevron). */
 .pattern-bg.on-dark > .pattern-layer { opacity: 0.85; }
 
+/* Subtle variant — faint watermark for inner pages & secondary home sections. */
+.pattern-bg.subtle > .pattern-layer { opacity: 0.06; width: clamp(120px, 16vw, 240px); }
+.pattern-bg.subtle.on-dark > .pattern-layer { opacity: 0.09; }
+
 .page-enter { animation: pageIn 0.55s var(--ease) both; }
 @keyframes pageIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 

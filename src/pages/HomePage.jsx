@@ -169,7 +169,7 @@ function Partners() {
 // ── 04 · Capabilities ────────────────────────────────────────────────────────
 function Capabilities() {
   return (
-    <Section bg="var(--paper)" pad="clamp(80px,13vw,128px) 0">
+    <Section bg="var(--paper)" pad="clamp(80px,13vw,128px) 0" chevron>
       <Reveal style={{ maxWidth:720, marginBottom:64 }}>
         <Eyebrow>Capabilities</Eyebrow>
         <h2 className="display" style={{ fontSize:'clamp(30px,4vw,54px)', marginTop:22 }}>
@@ -277,7 +277,7 @@ function Coverage() {
     { src:'/assets/logo-kimadia.png', name:'KIMADIA',                  sub:'State Co. for Drugs & Appliances' },
   ];
   return (
-    <Section bg="var(--paper)" pad="clamp(80px,13vw,128px) 0">
+    <Section bg="var(--paper)" pad="clamp(80px,13vw,128px) 0" chevron>
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:80 }} className="cov-grid">
         <div>
           <Reveal>
@@ -430,7 +430,7 @@ function SupplyChain() {
 // ── 08 · CTA ─────────────────────────────────────────────────────────────────
 function HomeCTA({ setPage }) {
   return (
-    <Section bg="var(--paper)" pad="clamp(76px,12vw,120px) 0">
+    <Section bg="var(--paper)" pad="clamp(76px,12vw,120px) 0" chevron>
       <Reveal style={{ borderTop:'1px solid var(--ink)', paddingTop:56 }}>
         <div style={{ display:'grid', gridTemplateColumns:'1.4fr 1fr', gap:56, alignItems:'end' }}
           className="cta-grid">
