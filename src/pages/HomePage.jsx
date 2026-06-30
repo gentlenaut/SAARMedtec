@@ -135,12 +135,28 @@ function Partners() {
         </p>
       </Reveal>
 
-      <Reveal mode="fade" className="partner-wall">
-        {PARTNER_LOGOS.map((src, i) => (
-          <div key={i} className="partner-cell">
-            <img src={src} alt="SAARMedTec manufacturer partner" loading="lazy" decoding="async"/>
-          </div>
-        ))}
+      <Reveal mode="fade" className="partner-marquee">
+        {(() => {
+          const half = Math.ceil(PARTNER_LOGOS.length / 2);
+          const rows = [PARTNER_LOGOS.slice(0, half), PARTNER_LOGOS.slice(half)];
+          const renderSet = (arr, clone) => (
+            <ul className="partner-set" aria-hidden={clone || undefined}>
+              {arr.map((src, i) => (
+                <li className="partner-item" key={(clone ? 'c' : '') + i}>
+                  <img src={src} alt={clone ? '' : 'SAARMedTec manufacturer partner'} loading="lazy" decoding="async"/>
+                </li>
+              ))}
+            </ul>
+          );
+          return rows.map((arr, r) => (
+            <div className="partner-lane" key={r}>
+              <div className={`partner-row${r ? ' rev' : ''}`}>
+                {renderSet(arr)}
+                {renderSet(arr, true)}
+              </div>
+            </div>
+          ));
+        })()}
       </Reveal>
       <div style={{ padding:'26px 2px 0', display:'flex', justifyContent:'space-between',
         alignItems:'center', flexWrap:'wrap', gap:8 }}>
