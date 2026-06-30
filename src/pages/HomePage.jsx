@@ -124,8 +124,7 @@ function Partners() {
       <Reveal style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end',
         flexWrap:'wrap', gap:24, marginBottom:56 }}>
         <div>
-          <Eyebrow>Global Partners</Eyebrow>
-          <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,46px)', marginTop:22, maxWidth:620 }}>
+          <h2 className="display" style={{ fontSize:'clamp(28px,3.6vw,46px)', maxWidth:620 }}>
             Trusted by the world's top medical innovators.
           </h2>
         </div>
