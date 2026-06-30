@@ -363,7 +363,8 @@ function SupplyChain() {
     { icon:'handshake', k:'Consignment', v:'Flexible Models',      d:'The only provider in Iraq offering full-consignment solutions — reducing financial burden for hospitals.' },
   ];
   return (
-    <section className="deep-surface" style={{ color:'var(--on-deep)', padding:'clamp(80px,13vw,128px) 0' }}>
+    <section className="deep-surface pattern-bg on-dark" style={{ color:'var(--on-deep)', padding:'clamp(80px,13vw,128px) 0' }}>
+      <div className="pattern-layer" aria-hidden="true"/>
       <div className="container">
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:64, alignItems:'end',
           marginBottom:40 }} className="sc-head">
