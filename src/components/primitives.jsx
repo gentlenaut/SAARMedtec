@@ -18,7 +18,10 @@ export function Eyebrow({ children, color, style }) {
   return (
     <div className="eyebrow" style={{ color: color || 'var(--red)', display:'flex',
       alignItems:'center', gap:10, ...style }}>
-      <span style={{ width:18, height:1, background:'currentColor' }}/>
+      <span aria-hidden="true" style={{ width:14, height:11, flex:'0 0 auto',
+        backgroundColor:'currentColor',
+        WebkitMask:'url(/assets/chevron-mark.svg) no-repeat center / contain',
+        mask:'url(/assets/chevron-mark.svg) no-repeat center / contain' }}/>
       {children}
     </div>
   );
