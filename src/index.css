@@ -204,20 +204,21 @@ a { color: inherit; }
 /* ── Brand chevron — bottom-right corner anchor (as used in the company
    profile): the SAAR double-chevron, brand red, bleeding off the corner. ───── */
 .pattern-bg { position: relative; isolation: isolate; overflow: hidden; }
+/* Full chevron anchored in the corner (never cropped) — small inset, no bleed. */
 .pattern-bg > .pattern-layer {
   position: absolute; z-index: -1; pointer-events: none;
-  right: -1.5%; bottom: -6%;
-  width: clamp(150px, 21vw, 340px); aspect-ratio: 147 / 134;
+  right: clamp(16px, 3vw, 48px); bottom: clamp(16px, 3vw, 48px);
+  width: clamp(120px, 15vw, 240px); aspect-ratio: 147 / 134;
   background-color: var(--red);
-  -webkit-mask: url('/assets/pattern-chevron.svg') no-repeat bottom right / contain;
-          mask: url('/assets/pattern-chevron.svg') no-repeat bottom right / contain;
-  opacity: 0.92;
+  -webkit-mask: url('/assets/pattern-chevron.svg') no-repeat center / contain;
+          mask: url('/assets/pattern-chevron.svg') no-repeat center / contain;
+  opacity: 0.9;
 }
 /* On dark surfaces keep it brand red (matches the profile's red chevron). */
 .pattern-bg.on-dark > .pattern-layer { opacity: 0.85; }
 
 /* Subtle variant — faint watermark for inner pages & secondary home sections. */
-.pattern-bg.subtle > .pattern-layer { opacity: 0.06; width: clamp(120px, 16vw, 240px); }
+.pattern-bg.subtle > .pattern-layer { opacity: 0.06; width: clamp(96px, 12vw, 180px); }
 .pattern-bg.subtle.on-dark > .pattern-layer { opacity: 0.09; }
 
 .page-enter { animation: pageIn 0.55s var(--ease) both; }
